@@ -1,17 +1,13 @@
 package org.example.model.entity;
 
-import static org.example.controller.SaleryConteiner.IT_EMPLOYEE;
-
 public class Employee {
     private String name;
     private String surname;
     private String patronymic;
     private String birthday;
     private String empployeeStartedDay;
-    private int payroll = IT_EMPLOYEE;
+    private int payroll;
 
-    public Employee() {
-    }
 
     public Employee(String name, String surname, String patronymic,
                     String birthday, String empployeeStartedDay, int payroll) {
@@ -21,6 +17,9 @@ public class Employee {
         this.birthday = birthday;
         this.empployeeStartedDay = empployeeStartedDay;
         this.payroll = payroll;
+    }
+
+    public Employee() {
     }
 
     public String getName() {

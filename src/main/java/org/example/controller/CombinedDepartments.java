@@ -1,35 +1,38 @@
 package org.example.controller;
 
-import org.example.model.Departments.ITDepratment;
-import org.example.model.Departments.LawDepartment;
-import org.example.model.Departments.ProductionDepartment;
-import org.example.model.entity.Employee;
-import org.example.model.entity.Manager;
 
 public class CombinedDepartments {
 
 
     public void returnSalary() {
-    //    Manager managerIT = new Manager(fourEmployeesForITDepartment());
-        Manager managerLaw = new Manager(fiveEmployeesForLawDepartment());
-        Manager managerProduction = new Manager(threeEmployeesForProductionDepartment());
-    }
+//        Manager managerIT = new Manager(departmentwithFourWorkplace());
+//        Manager managerLaw = new Manager(departmentwithFourWorkplace());
+//        Manager managerProduction = new Manager(departmentwithFourWorkplace());
+//    }
 
-    protected Employee[] fulfillDepartment() {
-        Employee[] array = new Employee[]{new Employee(), new Employee(),
-                new Employee(), new Employee()};
-        return array;
-    }
-
-    protected Employee[] fiveEmployeesForLawDepartment() {
-        Employee[] forLaw = new Employee[]{new Employee(), new Employee(),
-                new Employee(), new Employee(), new Employee()};
-        return forLaw;
-    }
-
-    protected Employee[] threeEmployeesForProductionDepartment() {
-        Employee[] forProduction = new Employee[]{new Employee(), new Employee(),
-                new Employee(), new Employee(), new Employee()};
-        return forProduction;
+//
+//    protected Employee[] calculateSalaryEmployee(Employee[] employee) {
+//        int sum;
+//        int finalSum;
+//        for (int i = 0; i < employee.length; i++) {
+//            sum = employee[i].getPayroll();
+//            finalSum = (int) (sum * 1.3);
+//            employee[i].setPayroll(finalSum);
+//        }
+//        return employee;
+//    }
+//
+//    protected Manager calculateSalaryManager(Employee employee) {
+//        int sum = employee.getPayroll();
+//        int finalSum = (int) (sum * 2);
+//        employee.setPayroll(finalSum);
+//        return (Manager) employee;
+//    }
+//
+//    protected int calculateSalarySeniour(Employee employee) {
+//        int sum = employee.getPayroll();
+//        int finalSum = (int) (sum * 3);
+//        return finalSum;
+//    }
     }
 }

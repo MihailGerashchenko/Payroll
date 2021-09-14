@@ -14,53 +14,60 @@ public class Controller implements SalaryAssingment {
     private Model model;
     private View view;
 
-    public Controller(Model model, View view) {
+    private ITDepratment itDepratment;
+    private LawDepartment lawDepartment;
+    private ProductionDepartment productionDepartment;
+    private Stuff stuff;
+
+    public Controller(Model model, View view, ITDepratment itDepratment,
+                      LawDepartment lawDepartment, ProductionDepartment productionDepartment, Stuff stuff) {
         this.model = model;
         this.view = view;
+        this.itDepratment = itDepratment;
+        this.lawDepartment = lawDepartment;
+        this.productionDepartment = productionDepartment;
+        this.stuff = stuff;
     }
 
     public void processUser() {
 
-
+        view.printMessage(View.IT, stuff.ITDepartmentComplectation().getEmployees(),
+                stuff.ITDepartmentComplectation().getManager());
+        view.printMessage(View.LAW, stuff.LawDepartmentComplectation().getEmployees(),
+                stuff.LawDepartmentComplectation().getManager());
+        view.printMessage(View.PRODACT, stuff.ProductionDepartmentComplectation().getEmployees(),
+                stuff.ProductionDepartmentComplectation().getManager());
+        view.printMassage(View.SENIOUR, stuff.senioursComplectation());
     }
 
     private void createDepartments() {
-        Manager managerIT = new Manager(fourEmployeesForITDepartment());
-        Manager managerLaw = new Manager(fiveEmployeesForLawDepartment());
-        Manager managerProduction = new Manager(threeEmployeesForProductionDepartment());
+//        CombinedDepartments CD = new CombinedDepartments();
+//
+//        Manager managerIT = new Manager(CD.fulfillDepartmentwithFourEmployees());
+//        Manager managerLaw = new Manager(CD.fulfillDepartmentwithFourEmployees());
+//        Manager managerProduction = new Manager(CD.fulfillDepartmentwithFourEmployees());
+//
+//        ITDepratment ITDepratment = new ITDepratment(CD.calculateSalaryEmployee(
+//                CD.fulfillDepartmentwithFourEmployees()), CD.calculateSalaryManager(managerIT));
+//        LawDepartment lawDepartment = new LawDepartment(CD.calculateSalaryEmployee(
+//                CD.fulfillDepartmentwithFourEmployees()), CD.calculateSalaryManager(managerLaw));
+//        ProductionDepartment productionDepartment =
+//                new ProductionDepartment(CD.calculateSalaryEmployee(
+//                        CD.fulfillDepartmentwithFourEmployees()), CD.calculateSalaryManager(managerProduction));
+//        Seniour CEO = new Seniour("CEO is responsible for in-depth issues");
+//        Seniour deputyCEO = new Seniour("deputyCEO is respunsible for departments");
+//
+//        int CEOSum = calculateSalarySeniour(CEO);
+//        int deputyCEOSum = calculateSalarySeniour(deputyCEO);
 
-        ITDepratment ITDepratment = new ITDepratment(calculateSalaryEmployee(fourEmployeesForITDepartment()), calculateSalaryManager(managerIT));
-        LawDepartment lawDepartment = new LawDepartment(calculateSalaryEmployee(fiveEmployeesForLawDepartment()), calculateSalaryManager(managerLaw));
-        ProductionDepartment productionDepartment =
-                new ProductionDepartment(calculateSalaryEmployee(threeEmployeesForProductionDepartment()), calculateSalaryManager(managerProduction));
-        Seniour CEO = new Seniour("CEO is responsible for in-depth issues");
-        Seniour deputyCEO = new Seniour("deputyCEO is respunsible for departments");
-
-        int CEOSum = calculateSalarySeniour(CEO);
-        int deputyCEOSum = calculateSalarySeniour(deputyCEO);
-
-        returnOveralSum(salarySum(calculateSalaryEmployee(fourEmployeesForITDepartment()), calculateSalaryManager(managerIT)),
-                salarySum(calculateSalaryEmployee(fiveEmployeesForLawDepartment()), calculateSalaryManager(managerLaw)),
-                salarySum(calculateSalaryEmployee(threeEmployeesForProductionDepartment()), calculateSalaryManager(managerProduction)));
+//        returnOveralSum(salarySum(calculateSalaryEmployee(fourEmployeesForITDepartment()), calculateSalaryManager(managerIT)),
+//                salarySum(calculateSalaryEmployee(fiveEmployeesForLawDepartment()), calculateSalaryManager(managerLaw)),
+//                salarySum(calculateSalaryEmployee(threeEmployeesForProductionDepartment()), calculateSalaryManager(managerProduction)));
 
     }
 
-    protected Employee[] fourEmployeesForITDepartment() {
-        Employee[] forIT = new Employee[]{new Employee(), new Employee(),
-                new Employee(), new Employee()};
-        return forIT;
-    }
+    private void financial() {
 
-    protected Employee[] fiveEmployeesForLawDepartment() {
-        Employee[] forLaw = new Employee[]{new Employee(), new Employee(),
-                new Employee(), new Employee(), new Employee()};
-        return forLaw;
-    }
-
-    protected Employee[] threeEmployeesForProductionDepartment() {
-        Employee[] forProduction = new Employee[]{new Employee(), new Employee(),
-                new Employee(), new Employee(), new Employee()};
-        return forProduction;
     }
 
     private int salarySum(Employee[] employees, Manager manager) {
@@ -70,10 +77,10 @@ public class Controller implements SalaryAssingment {
         }
         return sum + manager.getPayroll();
     }
-
-    private int returnOveralSum(int CEOsum, int deputyCEO, int method) {
-        int result = CEOsum + deputyCEO + method;
-        return result;
-    }
+//
+//    private int returnOveralSum(int CEOsum, int deputyCEO, int method) {
+//        int result = CEOsum + deputyCEO + method;
+//        return result;
+//    }
 }
 
