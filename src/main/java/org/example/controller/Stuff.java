@@ -30,10 +30,10 @@ public class Stuff {
 
     public LawDepartment LawDepartmentComplectation() {
         lawDepartment = new LawDepartment();
-        Employee firstEmployeeLawDepartment = new Employee("Pavel", "Davidov", "Serheevich", "26.12.1990",
-                "08.11.2020", LAW_EMPLOYEE);
-        Employee secondEmployeeLawDepartment = new Employee("Juliani", "Tadeevich", "Alekseevich", "05.06.1991",
-                "13.05.2009", LAW_EMPLOYEE);
+        Employee firstEmployeeLawDepartment = new Employee("Pavel", "Davidov", "Serheevich",
+                "26.12.1990", "08.11.2020", LAW_EMPLOYEE);
+        Employee secondEmployeeLawDepartment = new Employee("Juliani", "Tadeevich",
+                "Alekseevich", "05.06.1991", "13.05.2009", LAW_EMPLOYEE);
         Manager managerLawDepartment = new Manager("David", "Pareshvili", "Davidovich",
                 "11.08.1969", "11.03.2019", LAW_EMPLOYEE, lawDepartment.getEmployees());
         lawDepartment.addEmployee(firstEmployeeLawDepartment);
